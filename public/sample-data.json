@@ -1,0 +1,121 @@
+{
+  "projects": [
+    {
+      "id": "proj-001",
+      "name": "Digital Transformation Initiative",
+      "code": "DTI-2025",
+      "description": "Modernize legacy systems and implement new digital workflows",
+      "phases": ["Discover", "Design", "Develop", "Drive"],
+      "startDate": "2025-09-01",
+      "endDate": "2026-03-31",
+      "status": "Active",
+      "health": "On Track",
+      "priority": "High",
+      "budgetPlanned": 250000,
+      "budgetActual": 45000,
+      "sponsor": "Sarah Johnson",
+      "owner": "Michael Chen",
+      "goals": ["Reduce manual processes by 60%", "Improve customer satisfaction", "Increase operational efficiency"],
+      "kpis": [],
+      "tags": ["digital", "transformation"],
+      "links": [],
+      "team": [],
+      "documents": [],
+      "deliverables": [
+        {
+          "id": "del-001",
+          "startDate": "2025-09-01",
+          "endDate": "2025-09-15",
+          "comments": "Initial project setup and stakeholder alignment",
+          "workDone": [
+            {
+              "id": "work-001",
+              "date": "2025-08-22",
+              "description": "Completed stakeholder mapping and initial requirements gathering",
+              "hoursSpent": 16,
+              "author": "Project Manager"
+            }
+          ]
+        },
+        {
+          "id": "del-003",
+          "startDate": "2025-09-16",
+          "endDate": "2025-10-15",
+          "comments": "Business case development in progress",
+          "workDone": []
+        }
+      ],
+      "createdAt": "2025-08-15T10:00:00Z",
+      "updatedAt": "2025-08-21T14:30:00Z"
+    },
+    {
+      "id": "proj-002",
+      "name": "Customer Portal Redesign",
+      "code": "CPR-2025",
+      "description": "Redesign customer-facing portal for better UX and functionality",
+      "phases": ["Design", "Develop", "Drive"],
+      "startDate": "2025-10-01",
+      "endDate": "2025-12-31",
+      "status": "Active",
+      "health": "At Risk",
+      "priority": "Medium",
+      "budgetPlanned": 120000,
+      "budgetActual": 15000,
+      "sponsor": "David Wilson",
+      "owner": "Lisa Rodriguez",
+      "goals": ["Improve user experience", "Reduce support tickets"],
+      "kpis": [],
+      "tags": ["design", "ux"],
+      "links": [],
+      "team": [],
+      "documents": [],
+      "deliverables": [
+        {
+          "id": "del-008",
+          "startDate": "2025-10-01",
+          "endDate": "2025-10-30",
+          "comments": "User research and wireframe development",
+          "workDone": []
+        },
+        {
+          "id": "del-009",
+          "startDate": "2025-11-01",
+          "endDate": "2025-11-30",
+          "comments": "Functional prototype development",
+          "workDone": []
+        }
+      ],
+      "createdAt": "2025-08-10T09:00:00Z",
+      "updatedAt": "2025-08-20T16:45:00Z"
+    }
+  ],
+  "deliverables": [
+    { "id": "del-001", "name": "Kick-off Document", "description": "Project initiation and stakeholder alignment", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-002", "name": "Security and compliancy start point", "description": "Initial security assessment and compliance framework", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-003", "name": "Value Case", "description": "Business case and ROI analysis", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-004", "name": "Service Blueprint", "description": "Service design and process mapping", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-005", "name": "Roadmap", "description": "Project timeline and milestone planning", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-006", "name": "Backlog", "description": "Feature and requirement backlog", "defaultPhase": "Discover", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-007", "name": "Syllabus", "description": "Training and documentation plan", "defaultPhase": "Design", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-008", "name": "PSA & Information Architecture", "description": "Problem Statement Architecture and information structure", "defaultPhase": "Design", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-009", "name": "Wireframe (Figma)", "description": "UI wireframes and prototypes", "defaultPhase": "Design", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-010", "name": "PoC / Functional Design", "description": "Proof of concept and functional specifications", "defaultPhase": "Develop", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-011", "name": "Governance Structure", "description": "Project governance and test automation setup", "defaultPhase": "Develop", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-012", "name": "Statement of Work for Develop", "description": "Development phase planning and SOW", "defaultPhase": "Develop", "tags": [], "subDeliverables": [], "isAdHoc": false },
+    { "id": "del-013", "name": "End presentation D&D", "description": "Design and Development phase completion presentation", "defaultPhase": "Drive", "tags": [], "subDeliverables": [], "isAdHoc": false }
+  ],
+  "teamMembers": [
+    { "id": "tm-001", "name": "Alice Johnson", "role": "Product Owner", "seniority": "Senior", "location": "Amsterdam", "avatar": null },
+    { "id": "tm-002", "name": "Bob Smith", "role": "Developer", "seniority": "Medior", "location": "Rotterdam", "avatar": null },
+    { "id": "tm-003", "name": "Charlie Lee", "role": "Designer", "seniority": "Junior", "location": "Utrecht", "avatar": null }
+  ],
+  "documents": [
+    { "id": "doc-001", "name": "Project Charter", "description": "High level overview of project goals and scope", "type": "PDF", "link": "https://example.com/charter.pdf", "relatedDeliverableId": null },
+    { "id": "doc-002", "name": "Architecture Diagram", "description": "System architecture drawing", "type": "Image", "link": "https://example.com/diagram.png", "relatedDeliverableId": null }
+  ],
+  "userSettings": {
+    "theme": "light",
+    "branding": { "logoDataUrl": null },
+    "gist": { "enabled": false, "gistId": null, "githubTokenMasked": null }
+  }
+}
