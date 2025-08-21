@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PM Timeline</title>
+    <!-- Import Inter font with multiple weights -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <!-- Core stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar" role="navigation" aria-label="Main">
+        <div class="sidebar-header">
+          <!-- Simple placeholder for an app icon; replace with actual logo if available -->
+          <div class="app-icon" aria-hidden="true"></div>
+          <h1 class="app-title">PM Timeline</h1>
+        </div>
+        <nav class="nav-items">
+          <button
+            class="nav-item active"
+            data-view="timeline"
+            aria-label="Timeline view"
+          >
+            <span class="nav-label">Timeline</span>
+          </button>
+          <button
+            class="nav-item"
+            data-view="projects"
+            aria-label="Projects view"
+          >
+            <span class="nav-label">Projects</span>
+          </button>
+          <button
+            class="nav-item"
+            data-view="team"
+            aria-label="Team members view"
+          >
+            <span class="nav-label">Team Members</span>
+          </button>
+          <button
+            class="nav-item"
+            data-view="deliverables"
+            aria-label="Deliverables view"
+          >
+            <span class="nav-label">Deliverables</span>
+          </button>
+          <button
+            class="nav-item"
+            data-view="documents"
+            aria-label="Documents view"
+          >
+            <span class="nav-label">Documents</span>
+          </button>
+          <button
+            class="nav-item"
+            data-view="reports"
+            aria-label="Reports view"
+          >
+            <span class="nav-label">Reports</span>
+          </button>
+        </nav>
+      </aside>
+      <!-- Main content area -->
+      <div class="content">
+        <!-- Header with page title and filters -->
+        <header class="header">
+          <div class="header-titles">
+            <h2 class="page-title">Timeline View</h2>
+            <p class="page-subtitle">Visualise your project schedule</p>
+          </div>
+          <!-- Filter bar -->
+          <div class="filter-bar" role="region" aria-label="Filters">
+            <div class="filter-item">
+              <label for="filter-project" class="filter-label">Project</label>
+              <select id="filter-project" class="filter-select"></select>
+            </div>
+            <div class="filter-item">
+              <label for="filter-status" class="filter-label">Status</label>
+              <select id="filter-status" class="filter-select">
+                <option value="">All</option>
+                <option value="Open">Open</option>
+                <option value="WIP">WIP</option>
+                <option value="Done">Done</option>
+                <option value="Blocked">Blocked</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label for="filter-phase" class="filter-label">Phase</label>
+              <select id="filter-phase" class="filter-select">
+                <option value="">All</option>
+                <option value="Discover">Discover</option>
+                <option value="Design">Design</option>
+                <option value="Develop">Develop</option>
+                <option value="Drive">Drive</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <button id="export-pdf" class="btn primary">Export PDF</button>
+              <button id="sync-gist" class="btn secondary">Sync</button>
+            </div>
+          </div>
+        </header>
+        <!-- Summary card -->
+        <section class="summary-section" aria-label="Summary">
+          <div class="summary-card">
+            <div class="summary-icon"></div>
+            <div class="summary-metric">
+              <span id="summary-total" class="metric-value">0</span>
+              <span class="metric-label">Total Activities</span>
+            </div>
+          </div>
+        </section>
+        <!-- Timeline view -->
+        <main class="main-view" id="timeline-view">
+          <section class="timeline-section" aria-label="Project timeline">
+            <div class="timeline-header">
+              <span id="timeline-range-label" class="timeline-range">Timeline</span>
+            </div>
+            <div id="timeline-container" class="timeline-container">
+              <!-- Timeline grid and bars will be rendered here by JS -->
+            </div>
+          </section>
+        </main>
+        <!-- Projects view -->
+        <main class="main-view hidden" id="projects-view">
+          <section class="projects-section" aria-label="Projects">
+            <div class="projects-header">
+              <h2>Projects</h2>
+              <div class="projects-actions">
+                <button id="new-project" class="btn primary">New Project</button>
+              </div>
+            </div>
+            <div class="projects-table-container">
+              <table class="projects-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Status</th>
+                    <th>Health</th>
+                    <th>Priority</th>
+                    <th>Dates</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="projects-list"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+        <!-- Team view -->
+        <main class="main-view hidden" id="team-view">
+          <section class="team-section" aria-label="Team members">
+            <div class="section-header">
+              <h2>Team Members</h2>
+              <button id="new-team-member" class="btn primary">New Member</button>
+            </div>
+            <table class="team-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Seniority</th>
+                  <th>Location</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="team-list"></tbody>
+            </table>
+          </section>
+        </main>
+        <!-- Deliverables view -->
+        <main class="main-view hidden" id="deliverables-view">
+          <section class="deliverables-section" aria-label="Deliverables">
+            <div class="section-header">
+              <h2>Deliverables</h2>
+              <button id="new-deliverable" class="btn primary">New Deliverable</button>
+            </div>
+            <table class="deliverables-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Default Phase</th>
+                  <th>Tags</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="deliverables-list"></tbody>
+            </table>
+          </section>
+        </main>
+        <!-- Documents view -->
+        <main class="main-view hidden" id="documents-view">
+          <section class="documents-section" aria-label="Documents">
+            <div class="section-header">
+              <h2>Documents</h2>
+              <button id="new-document" class="btn primary">New Document</button>
+            </div>
+            <table class="documents-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="documents-list"></tbody>
+            </table>
+          </section>
+        </main>
+        <!-- Reports view (placeholder) -->
+        <main class="main-view hidden" id="reports-view">
+          <section class="reports-section" aria-label="Reports">
+            <h2>Reports</h2>
+            <p>Coming soon.</p>
+          </section>
+        </main>
+      </div>
+      <!-- Modal container for dynamic dialogs -->
+      <div id="modal-container"></div>
+    </div>
+    <!-- External libraries for drag/resize and PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interactjs/1.10.11/interact.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Application logic -->
+    <script src="app.js"></script>
+  </body>
+</html>
